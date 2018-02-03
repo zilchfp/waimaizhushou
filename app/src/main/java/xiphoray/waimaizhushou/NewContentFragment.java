@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 
 public class NewContentFragment extends android.support.v4.app.Fragment implements MainActivity.FragmentBackHandler {
-
     @SuppressLint("ValidFragment")
     NewContentFragment() {
     }
@@ -24,8 +23,6 @@ public class NewContentFragment extends android.support.v4.app.Fragment implemen
         txt_content.setText(getArguments().getString("content"));
         return view;
     }
-
-
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override

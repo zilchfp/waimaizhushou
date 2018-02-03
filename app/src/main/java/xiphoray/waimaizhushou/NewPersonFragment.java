@@ -22,9 +22,6 @@ public class NewPersonFragment extends android.support.v4.app.Fragment implement
         this.datas = datas;
     }
 
-
-
-
     @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -50,7 +47,7 @@ public class NewPersonFragment extends android.support.v4.app.Fragment implement
         ncFragment.setArguments(bd);
         //加上Fragment替换动画
         fTransaction.setCustomAnimations(R.anim.fragment_slide_left_enter, R.anim.fragment_slide_left_exit);
-        fTransaction.replace(R.id.fl_content, ncFragment);
+        fTransaction.replace(R.id.menu_content, ncFragment);
         //调用addToBackStack将Fragment添加到栈中
         fTransaction.addToBackStack(null);
         fTransaction.commit();

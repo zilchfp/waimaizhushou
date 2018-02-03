@@ -11,11 +11,11 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
-
-
     private ViewPager viewPager;
     private MenuItem menuItem;
     private long exitTime = 0;
+
+    //bar under the screen
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -26,7 +26,7 @@ public class MainActivity extends FragmentActivity {
                 case R.id.navigation_lists:
                     viewPager.setCurrentItem(0);
                     return true;
-                case R.id.navigation_roadlines:
+                case R.id.navigation_route:
                     viewPager.setCurrentItem(1);
                     return true;
                 case R.id.navigation_sendman:
@@ -80,16 +80,15 @@ public class MainActivity extends FragmentActivity {
     }
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-
         adapter.addFragment(BaseFragment.newInstance("订单"));
         adapter.addFragment(BaseFragment.newInstance("路线规划"));
         adapter.addFragment(BaseFragment.newInstance("派送中"));
         adapter.addFragment(BaseFragment.newInstance("消息"));
         adapter.addFragment(BaseFragment.newInstance("个人中心"));
-        //viewPager.setOffscreenPageLimit(4);
         viewPager.setAdapter(adapter);
     }
 
+    //exit the app
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBackPressed() {
@@ -103,6 +102,5 @@ public class MainActivity extends FragmentActivity {
             }
         }
     }
-
 }
 

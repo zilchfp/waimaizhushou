@@ -8,7 +8,7 @@
         android:title="@string/lists"/>
 
     <item
-        android:id="@+id/navigation_roadlines"
+        android:id="@+id/navigation_route"
         android:icon="@drawable/ic_action_roadlines"
         android:title="@string/roadlines"/>
 
